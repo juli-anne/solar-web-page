@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Istraživanje Sunčevog sustava - planeti, mjeseci, asteroidi, kometi i svemirske misije">
+    <meta name="keywords" content="Sunčev sustav, planeti, mjeseci, svemir, astronomija">
+    <title>Početna - Solar</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar" aria-label="Glavna navigacija">
+            <div class="nav-container">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="../images/logo.png" alt="Solarna stanica logo">
+                        <span>Solar</span>
+                    </a>
+                </div>
+                <ul class="nav-menu">
+                    <li class="dropdown">
+                        <a href="objekti/planeti.html" class="dropbtn">Planeti</a>
+                        <div class="dropdown-content">
+                            <a href="objekti/planeti/jupiter.html">Jupiter</a>
+                            <a href="objekti/planeti/mars.html">Mars</a>
+                            <a href="objekti/planeti/merkur.html">Merkur</a>
+                            <a href="objekti/planeti/neptun.html">Neptun</a>
+                            <a href="objekti/planeti/saturn.html">Saturn</a>
+                            <a href="objekti/planeti/uran.html">Uran</a>
+                            <a href="objekti/planeti/venera.html">Venera</a>
+                            <a href="objekti/planeti/zemlja.html">Zemlja</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="objekti/mjeseci.html" class="dropbtn">Mjeseci</a>
+                        <div class="dropdown-content">
+                            <a href="objekti/mjeseci/enceladus.html">Enceladus</a>
+                            <a href="objekti/mjeseci/europa.html">Europa</a>
+                            <a href="objekti/mjeseci/mjesec.html">Mjesec</a>
+                            <a href="objekti/mjeseci/titan.html">Titan</a>
+                        </div>
+                    </li>
+                    <li><a href="objekti/kometi.html">Kometi</a></li>
+                    <li><a href="objekti/asteroidi.html">Asteroidi</a></li>
+                    <li><a href="ostalo/misije.html">Svemirske misije</a></li>
+                    <li><a href="kontakt.html">Kontakt</a></li>
+                    <li><a href="multimedija.html">Multimedija</a></li>
+                </ul>
+                <button class="mobile-menu-btn" aria-label="Otvori mobilni meni" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-banner">
+            <div class="hero-slider">
+                <div class="slide active">
+                    <img src="../images/solar-system-1.jpeg" alt="Sunčev sustav">
+                    <div class="hero-content">
+                        <h1>Dobrodošli u Solarnu stanicu</h1>
+                        <p>Istražite čudesni svijet planeta, mjeseca i svemirskih objekata</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="../images/planets.jpg" alt="Planeti">
+                    <div class="hero-content">
+                        <h1>Osam planeta</h1>
+                        <p>Otkrijte jedinstvene karakteristike svakog planeta</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="../images/space-mission.jpeg" alt="Svemirske misije">
+                    <div class="hero-content">
+                        <h1>Svemirske misije</h1>
+                        <p>Pratite najvažnije eksploracije svemira</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="../images/deep-space.jpg" alt="Duboki svemir">
+                    <div class="hero-content">
+                        <h1>Duboki svemir</h1>
+                        <p>Istraživanje galaksija i zvjezdanih sustava</p>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-navigation">
+                <button class="hero-prev" aria-label="Prethodna slika">&lt;</button>
+                <button class="hero-next" aria-label="Sljedeća slika">&gt;</button>
+            </div>
+        </section>
+
+        <section class="statistics">
+            <div class="container">
+                <h2>Statistike Sunčevog sustava</h2>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="8">0</div>
+                        <div class="stat-label">Planeta</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="200">0</div>
+                        <div class="stat-label">Mjeseca</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="1000000">0</div>
+                        <div class="stat-label">Asteroida</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="4600">0</div>
+                        <div class="stat-label">Milijuna godina starosti</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="intro">
+            <div class="container">
+                <h2><br>O Sunčevom sustavu</h2>
+                <p>Sunčev sustav je gravitacijski vezan sustav koji se sastoji od Sunca i svih nebeskih tijela koja kruže oko njega. Nalazi se u Mliječnoj stazi, našoj galaksiji, na udaljenosti od oko 26.000 svjetlosnih godina od galaktičkog centra.</p>
+                
+                <div class="intro-grid">
+                    <div class="intro-card">
+                        <h3>Planeti</h3>
+                        <p>Osam planeta kruži oko Sunca, od unutrašnjih kamenitih do vanjskih plinovitih divova.</p>
+                        <a href="objekti/planeti.html" class="btn">Saznaj više</a>
+                    </div>
+                    <div class="intro-card">
+                        <h3>Mjeseci</h3>
+                        <p>Prirodni sateliti planeta s fascinantnim karakteristikama i mogućnostima za život.</p>
+                        <a href="objekti/mjeseci.html" class="btn">Saznaj više</a>
+                    </div>
+                    <div class="intro-card">
+                        <h3>Svemirske misije</h3>
+                        <p>Istraživanje svemira kroz povijesne i trenutne misije različitih svemirskih agencija.</p>
+                        <a href="ostalo/misije.html" class="btn">Saznaj više</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Autorica</h3>
+                <p>Julianne Lazar</p>
+                <p><br>Datum predaje: lipanj 2025.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Kolegij</h3>
+                <p>Napredna web korisnika sučelja</p>
+                <img src="../images/foi-logo.png" alt="FOI logo" class="foi-logo">
+            </div>
+            <div class="footer-section">
+                <h3>Navigacija</h3>
+                <ul class="footer-nav">
+                    <li><a href="index.html">Početna</a></li>
+                    <li><a href="objekti/planeti.html">Planeti</a></li>
+                    <li><a href="objekti/mjeseci.html">Mjeseci</a></li>
+                    <li><a href="objekti/kometi.html">Kometi</a></li>
+                    <li><a href="objekti/asteroidi.html">Asteroidi</a></li>
+                    <li><a href="ostalo/misije.html">Svemirske misije</a></li>
+                    <li><a href="kontakt.html">Kontakt</a></li>
+                    <li><a href="multimedija.html">Multimedija</a></li>
+                    <li><a href="privatnost.html">Politika privatnosti</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

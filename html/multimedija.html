@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="hr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+      name="description"
+      content="Istraživanje Sunčevog sustava - planeti, mjeseci, asteroidi, kometi i svemirske misije"
+    >
+    <meta
+      name="keywords"
+      content="Sunčev sustav, planeti, mjeseci, svemir, astronomija"
+    >
+    <title>Multimedija - Solar</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    >
+  </head>
+
+  <body>
+    <header>
+      <nav class="navbar" aria-label="Glavna navigacija">
+        <div class="nav-container">
+          <div class="logo">
+            <a href="index.html">
+              <img src="../images/logo.png" alt="Sunčev sustav logo">
+              <span>Solar</span>
+            </a>
+          </div>
+          <ul class="nav-menu">
+            <li class="dropdown">
+              <a href="objekti/planeti.html" class="dropbtn">Planeti</a>
+              <div class="dropdown-content">
+                <a href="objekti/planeti/jupiter.html">Jupiter</a>
+                <a href="objekti/planeti/mars.html">Mars</a>
+                <a href="objekti/planeti/merkur.html">Merkur</a>
+                <a href="objekti/planeti/neptun.html">Neptun</a>
+                <a href="objekti/planeti/saturn.html">Saturn</a>
+                <a href="objekti/planeti/uran.html">Uran</a>
+                <a href="objekti/planeti/venera.html">Venera</a>
+                <a href="objekti/planeti/zemlja.html">Zemlja</a>
+              </div>
+            </li>
+            <li class="dropdown">
+              <a href="objekti/mjeseci.html" class="dropbtn">Mjeseci</a>
+              <div class="dropdown-content">
+                <a href="objekti/mjeseci/enceladus.html">Enceladus</a>
+                <a href="objekti/mjeseci/europa.html">Europa</a>
+                <a href="objekti/mjeseci/mjesec.html">Mjesec</a>
+                <a href="objekti/mjeseci/titan.html">Titan</a>
+              </div>
+            </li>
+            <li><a href="objekti/kometi.html">Kometi</a></li>
+            <li><a href="objekti/asteroidi.html">Asteroidi</a></li>
+            <li><a href="ostalo/misije.html">Svemirske misije</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+            <li><a href="multimedija.html">Multimedija</a></li>
+          </ul>
+          <button
+            class="mobile-menu-btn"
+            aria-label="Otvori mobilni meni"
+            aria-expanded="false"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main class="multimedia-page">
+      <div class="container">
+        <h1>Multimedijski sadržaj</h1>
+
+        <section class="video-section">
+          <h2>Video sadržaj</h2>
+          <div class="video-container">
+            <video controls poster="../images/video-poster.jpg">
+              <source
+                src="../media/video/solar-system-101.mp4"
+                type="video/mp4"
+              >
+              <source
+                src="../media/video/solar-system-101.webm"
+                type="video/webm"
+              >
+              Vaš pregljednik ne podržava video element.
+            </video>
+            <p class="media-description">
+              Putovanje kroz Sunčev sustav - spektakularan video prikaz svih
+              planeta
+            </p>
+          </div>
+        </section>
+
+        <section class="audio-section">
+          <h2>Zvučni zapisi</h2>
+          <div class="audio-grid">
+            <div class="audio-item">
+              <h3>Zvukovi svemira</h3>
+              <audio controls>
+                <source
+                  src="../media/audio/space-sound.mp3"
+                  type="audio/mpeg"
+                >
+                <source src="../media/audio/space-sound.ogg" type="audio/ogg">
+                Vaš pregljednik ne podržava audio element.
+              </audio>
+              <p>mistični zvukovi koji dolaze iz dubina svemira</p>
+            </div>
+            <div class="audio-item">
+              <h3>Čudni zvukovi svemira</h3>
+              <audio controls>
+                <source
+                  src="../media/audio/weird-space-sound.mp3"
+                  type="audio/mpeg"
+                >
+                <source
+                  src="../media/audio/weird-space-sound.ogg"
+                  type="audio/ogg"
+                >
+                Vaš pregljednik ne podržava audio element.
+              </audio>
+              <p>čudni i strašni zvukovi koji dolaze iz dubine svemira</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="gallery-section">
+          <h2>Galerija slika</h2>
+          <div class="image-gallery">
+            <div class="gallery-item">
+              <img src="../images/hubble-nebula.jpeg" alt="Hubble maglica">
+              <div class="gallery-overlay">
+                <h3>Hubble maglica</h3>
+                <p>Spektakularna slika maglice snimljena Hubble teleskopom</p>
+              </div>
+            </div>
+            <div class="gallery-item">
+              <img src="../images/mars-surface.jpg" alt="Površina Marsa">
+              <div class="gallery-overlay">
+                <h3>Površina Marsa</h3>
+                <p>Detaljan prikaz marsovske površine s rover misije</p>
+              </div>
+            </div>
+            <div class="gallery-item">
+              <img src="../images/saturn-rings.jpg" alt="Saturnovi prstenovi">
+              <div class="gallery-overlay">
+                <h3>Saturnovi prstenovi</h3>
+                <p>Prekrasni prikaz Saturnovih prstenova iz blizine</p>
+              </div>
+            </div>
+            <div class="gallery-item">
+              <img src="../images/jupiter-storm.jpg" alt="Jupiterova oluja">
+              <div class="gallery-overlay">
+                <h3>Velika crvena pjega</h3>
+                <p>Jupiterova legendarna oluja veća od Zemlje</p>
+              </div>
+            </div>
+            <div class="gallery-item">
+              <img
+                src="../images/earth-from-space.jpg"
+                alt="Zemlja iz svemira"
+              >
+              <div class="gallery-overlay">
+                <h3>Zemlja iz svemira</h3>
+                <p>Naš plavi planet kako ga vide astronauti</p>
+              </div>
+            </div>
+            <div class="gallery-item">
+              <img src="../images/moon-phases.jpeg" alt="Mjesečeve faze">
+              <div class="gallery-overlay">
+                <h3>Mjesečeve faze</h3>
+                <p>Ciklus mjesečevih faza kroz mjesec dana</p>
+              </div>
+            </div>
+            <div class="gallery-item">
+              <img src="../images/nebula-colors.jpg" alt="Šarena maglica">
+              <div class="gallery-overlay">
+                <h3>Šarena maglica</h3>
+                <p>Spektakularni prikaz boja u dubokom svemiru</p>
+              </div>
+            </div>
+            <div class="gallery-item">
+              <img src="../images/asteroid-belt.png" alt="Asteroidni pojas">
+              <div class="gallery-overlay">
+                <h3>Asteroidni pojas</h3>
+                <p>Pojas asteroida između Marsa i Jupitera</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="media-credits">
+          <h2>Autorska prava i izvori</h2>
+          <div class="credits-content">
+            <p>
+              Sav multimedijski sadržaj na ovoj stranici preuzet je s navedenih
+              izvora i koristi se isključivo u obrazovne svrhe u sklopu
+              akademskog projekta. Niti jedna slika nije generirana umjetnom
+              inteligencijom; sve su preuzete s javno dostupnih izvora ili
+              službenih znanstvenih institucija, a popis izvora nalazi se ispod.
+              Za obradu i prilagodbu slika (npr. rezanje, resize, izrada
+              logotipa) korišten je Adobe Photoshop i Illustrator (trial verzija).
+            </p>
+            <ul>
+              <li>
+                <strong>Video:</strong>
+                <a
+                  href="https://youtu.be/libKVRa01L8?si=EKm9ssUT-u_zzPjw"
+                  target="_blank"
+                  >National Geographic – Solar System 101</a
+                >
+                (konvertiran za web prikaz)
+              </li>
+              <li>
+                <strong>Audio:</strong>
+                <ul>
+                  <li>
+                    Sound Effect by
+                    <a
+                      href="https://pixabay.com/users/liecio-3298866/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=109577"
+                      target="_blank"
+                      >LIECIO</a
+                    >
+                    i
+                    <a
+                      href="https://pixabay.com/users/idoberg-34953295/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=344943"
+                      target="_blank"
+                      >ido berg</a
+                    >
+                    (<a href="https://pixabay.com/" target="_blank">Pixabay</a>,
+                    konvertirano iz mp3 u ogg)
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <strong>Fotografije i ilustracije:</strong>
+                <ul>
+                  <li>
+                    <strong
+                      >NASA / NASA Science / JPL / Jet Propulsion
+                      Laboratory:</strong
+                    >
+                    slike planeta (Jupiter, Venera, Mars, Zemlja, Merkur,
+                    Neptun, Uran), mjeseci (Enceladus, Europa, Titan, Mjesec),
+                    asteroida (Ceres, Vesta, Pallas, asteroid-belt), kometa
+                    (Halley, Hale-Bopp, NEOWISE, Churyumov-Gerasimenko,
+                    struktura kometa), maglica, površina Marsa, faze Mjeseca,
+                    pregled mjeseca, Voyager, Cassini, Hubble, Saturnovi
+                    prstenovi, Jupiterova oluja, deep-space, solar-system-1,
+                    planets, space-mission, golden record, earth-from-space,
+                    nebula-colors, moon-phases, i dr.
+                    <em
+                      >Većina NASA i JPL slika je u javnom vlasništvu (public
+                      domain), osim ako nije drugačije navedeno. Preporučena
+                      oznaka: "Courtesy NASA/JPL-Caltech".</em
+                    >
+                  </li>
+                  <li><strong>ESA:</strong> slike Hubble, kometa, asteroida</li>
+                  <li>
+                    <strong>Wikimedia Commons:</strong> slike planeta, mjeseca,
+                    pallas.png, neptun.png, moon-phases, Cassini-Saturn, Mars,
+                    itd.
+                  </li>
+                  <li>
+                    <strong
+                      >Science Photo Library, Innovation News Network,
+                      Clarkvision, Museum of Science Boston, Australian
+                      Environmental Education, Wixstatic, Impulse Gamer,
+                      Artlist, Future Publishing, Unsplash, NY Times, NPR,
+                      Croatian Makers:</strong
+                    >
+                    pojedinačne slike i ilustracije (npr. foi-logo.png, planets,
+                    mars-surface, earth-from-space, moon-overview,
+                    solar-system-1, space-mission, deep-space, itd.)
+                  </li>
+                  <li>
+                    <strong>Logo:</strong> Autorski rad, izrađen u Adobe
+                    Illustratoru korištenjem osnovnih oblika (shape tools). Za
+                    resize i pripremu korišten je Adobe Photoshop trial.
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <strong>Alati korišteni za validaciju i obradu:</strong>
+                <ul>
+                  <li>
+                    HTML:
+                    <a href="https://validator.w3.org/" target="_blank"
+                      >W3C HTML Validator</a
+                    >
+                  </li>
+                  <li>
+                    CSS:
+                    <a
+                      href="https://jigsaw.w3.org/css-validator/"
+                      target="_blank"
+                      >W3C CSS Validator</a
+                    >
+                  </li>
+                  <li>
+                    JavaScript:
+                    <a
+                      href="https://www.site24x7.com/tools/javascript-validator.html"
+                      target="_blank"
+                      >Site24x7 JS Validator</a
+                    >,
+                    <a href="https://validatejavascript.com/" target="_blank"
+                      >ValidateJavaScript.com</a
+                    >
+                  </li>
+                  <li>
+                    Konverzije formata:
+                    <a href="https://convertio.co/mp3-ogg/" target="_blank"
+                      >Convertio (mp3→ogg)</a
+                    >,
+                    <a
+                      href="https://mconverter.eu/convert/mp4/webp/"
+                      target="_blank"
+                      >MConverter (mp4→webm)</a
+                    >
+                  </li>
+                  <li>Prototipiranje: Draw.io, Figma</li>
+                </ul>
+              </li>
+                <li>
+                    Paleta boja:
+                    <a href="https://coolors.co/" target="_blank"
+                      >Coolors</a
+                    >
+              <li>
+                <strong>Literatura i dodatni izvori:</strong> W3Schools.
+              </li>
+            </ul>
+            <p class="disclaimer">
+              Svi materijali koriste se isključivo u obrazovne svrhe u sklopu
+              akademskog projekta. Prava na slike i multimediju pripadaju
+              navedenim izvorima. Za NASA/JPL slike vrijedi: "Unless otherwise
+              noted, NASA material is not protected by copyright." Za ostale
+              izvore poštovana su pravila korištenja i označavanja prema
+              uvjetima Creative Commons ili javnog vlasništva.<br>
+              FOI logo je autorski rad, izrađen isključivo za potrebe ovog
+              projekta.<br>
+              Za sva pitanja vezana uz autorska prava i izvore, kontaktirajte
+              autora projekta.
+            </p>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Autorica</h3>
+          <p>Julianne Lazar</p>
+          <p><br>Datum predaje: lipanj 2025.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Kolegij</h3>
+          <p>Napredna web korisnika sučelja</p>
+          <img src="../images/foi-logo.png" alt="FOI logo" class="foi-logo">
+        </div>
+        <div class="footer-section">
+          <h3>Navigacija</h3>
+          <ul class="footer-nav">
+            <li><a href="index.html">Početna</a></li>
+            <li><a href="objekti/planeti.html">Planeti</a></li>
+            <li><a href="objekti/mjeseci.html">Mjeseci</a></li>
+            <li><a href="objekti/kometi.html">Kometi</a></li>
+            <li><a href="objekti/asteroidi.html">Asteroidi</a></li>
+            <li><a href="ostalo/misije.html">Svemirske misije</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+            <li><a href="multimedija.html">Multimedija</a></li>
+            <li><a href="privatnost.html">Politika privatnosti</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+  </body>
+</html>

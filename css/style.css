@@ -1,0 +1,1903 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Montserrat", Arial, sans-serif;
+    background: linear-gradient(135deg, #0c0c0c 0%, #1a1a2e 50%, #16213e 100%);
+    color: #ffffff;
+    min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.logo,
+.nav-menu a,
+.dropdown-content a,
+.footer-section h3 {
+    font-family: "Orbitron", Arial, sans-serif;
+    letter-spacing: 0.5px;
+}
+
+button,
+.btn,
+label {
+    font-family: "Orbitron", Arial, sans-serif;
+}
+
+p,
+li,
+.planet-description,
+.media-description,
+.stat-label,
+.stat-value,
+.form-group input,
+.form-group textarea {
+    font-family: "Montserrat", Arial, sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.intro-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2.5rem;
+}
+
+.intro-card {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    padding: 2rem 1.5rem 2.5rem 1.5rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 230px;
+}
+
+.intro-card h3 {
+    color: #00d4ff;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    font-family: "Orbitron", Arial, sans-serif;
+}
+
+.intro-card p {
+    color: #e0e0e0;
+    margin-bottom: 1.5rem;
+    font-family: "Montserrat", Arial, sans-serif;
+    font-size: 1rem;
+    flex: 1 1 auto;
+}
+
+.intro-card .btn {
+    align-self: flex-end;
+    margin-top: auto;
+    font-size: 1rem;
+    padding: 0.7rem 1.5rem;
+    border-radius: 20px;
+    background: linear-gradient(45deg, #00d4ff, #0099cc);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-family: "Orbitron", Arial, sans-serif;
+    transition: background 0.2s, transform 0.2s;
+    z-index: 1;
+}
+
+.intro-card .btn:hover {
+    background: linear-gradient(45deg, #0099cc, #00d4ff);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 700px) {
+    .intro-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .intro-card {
+        min-height: unset;
+        padding: 1.5rem 1rem 2rem 1rem;
+    }
+}
+
+/* navigacija */
+.navbar {
+    background: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 1rem 0;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #00d4ff;
+    margin-right: 2rem;
+}
+
+.logo a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #00d4ff;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.logo img {
+    width: 40px;
+    height: 40px;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-menu a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    padding: 0.5rem 1rem;
+    white-space: nowrap;
+}
+
+.nav-menu a:hover {
+    color: #00d4ff;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.95);
+    min-width: 200px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    border-radius: 8px;
+    top: 100%;
+    left: 0;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 12px 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dropdown:hover .dropdown-content,
+.dropdown.active .dropdown-content {
+    display: block;
+}
+
+/* mobilna navigacija */
+.mobile-menu-btn {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.mobile-menu-btn span {
+    width: 25px;
+    height: 3px;
+    background: #ffffff;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+    .mobile-menu-btn {
+        display: flex;
+    }
+
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 80px;
+        flex-direction: column;
+        background: rgba(0, 0, 0, 0.95);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+        backdrop-filter: blur(10px);
+        padding: 2rem 0;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-menu li {
+        margin: 1rem 0;
+    }
+
+    .dropdown-content {
+        position: static;
+        display: none;
+        background: rgba(0, 0, 0, 0.8);
+        box-shadow: none;
+        margin-top: 1rem;
+    }
+
+    .dropdown.active .dropdown-content {
+        display: block;
+    }
+
+    .mobile-menu-btn.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .mobile-menu-btn.active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .mobile-menu-btn.active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+/* hero banner */
+.hero-banner {
+    margin-top: 80px;
+    height: 60vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 2;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+/* page-hero */
+.page-hero {
+    margin-top: 80px;
+    margin-bottom: 2.5rem;
+    text-align: center;
+    padding: 2.5rem 0 2rem 0;
+    background: none;
+}
+
+.page-hero h1 {
+    color: #00d4ff;
+    margin-bottom: 1rem;
+    font-size: 2.2rem;
+    font-family: "Orbitron", Arial, sans-serif;
+}
+
+.page-hero p {
+    color: #cccccc;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    font-family: "Montserrat", Arial, sans-serif;
+}
+
+/* statistike */
+.statistics {
+    padding: 4rem 0;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.statistics h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    color: #00d4ff;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 900;
+    color: #00d4ff;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 1.1rem;
+    color: #cccccc;
+}
+
+/* planeti i mjeseci - vezne stranice s pregledima */
+.planet-hero,
+.moons-intro-page {
+    margin-top: 80px;
+    padding: 4rem 0;
+}
+
+.planet-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.planet-image img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+}
+
+.planet-details h1 {
+    font-size: 3rem;
+    color: #00d4ff;
+    margin-bottom: 1rem;
+}
+
+.planet-subtitle {
+    font-size: 1.2rem;
+    color: #cccccc;
+    margin-bottom: 2rem;
+}
+
+.planet-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.stat {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+}
+
+.stat-label {
+    color: #cccccc;
+}
+
+.stat-value {
+    color: #00d4ff;
+    font-weight: 700;
+}
+
+.planet-description {
+    margin-top: 2rem;
+}
+
+.moon-categories {
+    margin: 4rem 0;
+}
+
+.moon-categories h2 {
+    color: #00d4ff;
+    margin-bottom: 3rem;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.moon-categories .categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.moon-categories .category-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.moon-categories .category-card h3 {
+    color: #00d4ff;
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+}
+
+.moon-categories .category-card p {
+    color: #cccccc;
+    margin-bottom: 1rem;
+}
+
+.category-example {
+    margin-top: 1rem;
+    padding: 0.7rem 1.2rem;
+    background: rgba(0, 212, 255, 0.1);
+    border-radius: 8px;
+    color: #00d4ff;
+    font-size: 0.95rem;
+    font-weight: bold;
+    display: inline-block;
+}
+
+/* zanimljivosti o mjesecima */
+.moon-facts {
+    margin: 4rem 0;
+    text-align: center;
+}
+
+.moon-facts h2 {
+    color: #00d4ff;
+    margin-bottom: 3rem;
+    font-size: 2rem;
+}
+
+.facts-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    justify-items: center;
+}
+
+.fact-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+}
+
+.fact-number {
+    display: block;
+    font-size: 2.3rem;
+    font-weight: 900;
+    color: #00d4ff;
+    margin-bottom: 0.5rem;
+}
+
+.fact-text {
+    color: #ffffff;
+    font-size: 1.1rem;
+}
+
+/* poseban stil za planet-facts na planeti.html */
+.planet-facts .facts-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    justify-items: center;
+    margin-top: 2rem;
+}
+
+.planet-facts .fact-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+}
+
+.planet-facts .fact-number {
+    display: block;
+    font-size: 2.3rem;
+    font-weight: 900;
+    color: #00d4ff;
+    margin-bottom: 0.5rem;
+}
+
+.planet-facts .fact-text {
+    color: #ffffff;
+    font-size: 1.1rem;
+}
+
+@media (max-width: 700px) {
+    .planet-facts .facts-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Astrobiologija */
+.astrobiology-section {
+    margin: 4rem 0;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 3rem;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.astrobiology-section h2 {
+    color: #00d4ff;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.astrobiology-content>p {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+.astrobiology-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.feature {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.feature h4 {
+    color: #00d4ff;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.feature p {
+    color: #cccccc;
+    line-height: 1.6;
+}
+
+/* responzivnost za mjeseci */
+@media (max-width: 900px) {
+
+    .moon-categories .categories-grid,
+    .facts-container,
+    .astrobiology-features {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* pojedinačni planeti i mjeseci */
+.planets-intro-page,
+.moons-intro-page {
+    margin-top: 80px;
+    padding: 2rem 0;
+}
+
+.intro-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.intro-text h2 {
+    color: #00d4ff;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+}
+
+.intro-text ul {
+    margin: 1.5rem 0;
+    padding-left: 2rem;
+}
+
+.intro-text li {
+    margin-bottom: 0.8rem;
+    color: #cccccc;
+}
+
+.intro-text strong {
+    color: #00d4ff;
+}
+
+.intro-image img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+}
+
+.planets-quick-nav,
+.featured-moons {
+    margin: 4rem 0;
+}
+
+.planets-quick-nav h2,
+.featured-moons h2 {
+    color: #00d4ff;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.planets-quick-nav>p,
+.featured-moons>p {
+    text-align: center;
+    color: #cccccc;
+    margin-bottom: 3rem;
+}
+
+.planets-nav-grid,
+.moons-nav-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+}
+
+.planet-nav-card,
+.moon-nav-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 1.5rem;
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+}
+
+.planet-nav-card:hover,
+.moon-nav-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 212, 255, 0.3);
+}
+
+.planet-nav-card img,
+.moon-nav-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    object-fit: cover;
+}
+
+.planet-nav-card h3,
+.moon-nav-card h3 {
+    color: #00d4ff;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.planet-nav-card p,
+.moon-nav-card p {
+    color: #cccccc;
+    font-size: 0.9rem;
+}
+
+.moon-planet {
+    display: inline-block;
+    background: rgba(0, 212, 255, 0.2);
+    color: #00d4ff;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    border: 1px solid rgba(0, 212, 255, 0.3);
+}
+
+/* kometi */
+.comets-page main {
+    padding-top: 40px;
+}
+
+.comets-page .page-hero {
+    margin-bottom: 2.5rem;
+    text-align: center;
+    padding: 2rem 0 1.5rem 0;
+}
+
+.comets-page .page-hero h1 {
+    color: #00d4ff;
+    margin-bottom: 1rem;
+    font-size: 2.2rem;
+}
+
+.comets-page .page-hero p {
+    color: #cccccc;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+.comet-info {
+    margin: 3rem 0;
+}
+
+.comet-info h2 {
+    color: #00d4ff;
+    margin-bottom: 2.5rem;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.comet-info .info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    align-items: center;
+    margin-bottom: 2.5rem;
+}
+
+.comet-info .info-text {
+    color: #e0e0e0;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 16px rgba(0, 212, 255, 0.05);
+}
+
+.comet-info .info-image {
+    text-align: center;
+}
+
+.comet-info .info-image img {
+    max-width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 6px 24px rgba(0, 212, 255, 0.13);
+    background: #151a21;
+    display: block;
+    margin: 0 auto;
+}
+
+@media (max-width: 900px) {
+    .comet-info .info-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .comet-info .info-image img {
+        height: 200px;
+    }
+}
+
+.comets-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+}
+
+.comet-card {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.comet-card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    object-fit: cover;
+}
+
+.comet-details h3 {
+    color: #00d4ff;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.comet-details p,
+.comet-details .comet-stats p {
+    color: #e0e0e0;
+    font-size: 1rem;
+}
+
+.comet-stats {
+    margin-bottom: 1rem;
+}
+
+.famous-comets {
+    margin: 3rem 0;
+}
+
+.famous-comets h2 {
+    color: #00d4ff;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.comet-facts {
+    margin: 3rem 0;
+}
+
+.comet-facts h2 {
+    color: #00d4ff;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.facts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+
+.fact-item {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 1.2rem;
+    color: #e0e0e0;
+}
+
+.fact-item h3 {
+    color: #00d4ff;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+/* responzivnost za kometi */
+@media (max-width: 900px) {
+    .comet-info .info-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .comets-grid,
+    .facts-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* asteroidi */
+.asteroids-page main {
+    padding-top: 40px;
+}
+
+.asteroids-page .page-hero {
+    margin-bottom: 2.5rem;
+    text-align: center;
+    padding: 2rem 0 1.5rem 0;
+}
+
+.asteroids-page .page-hero h1 {
+    color: #00d4ff;
+    margin-bottom: 1rem;
+    font-size: 2.2rem;
+}
+
+.asteroids-page .page-hero p {
+    color: #cccccc;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+.asteroid-belt {
+    margin: 3rem 0;
+}
+
+.asteroid-belt h2 {
+    color: #00d4ff;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.belt-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+}
+
+.belt-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0, 212, 255, 0.1);
+}
+
+.belt-description {
+    color: #e0e0e0;
+    font-size: 1.1rem;
+}
+
+.belt-stats {
+    margin-top: 1.5rem;
+}
+
+.major-asteroids {
+    margin: 3rem 0;
+}
+
+.major-asteroids h2 {
+    color: #00d4ff;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.asteroids-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+}
+
+.asteroid-card {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.asteroid-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    background: #111;
+    display: block;
+}
+
+.asteroid-details h3 {
+    color: #00d4ff;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.asteroid-details p,
+.asteroid-details .asteroid-stats p {
+    color: #e0e0e0;
+    font-size: 1rem;
+}
+
+.asteroid-stats {
+    margin-bottom: 1rem;
+}
+
+.asteroid-types {
+    margin: 3rem 0;
+}
+
+.asteroid-types h2 {
+    color: #00d4ff;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.types-grid,
+.nea-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+
+.type-card,
+.nea-category {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 1.2rem;
+    color: #e0e0e0;
+}
+
+.type-card h3,
+.nea-category h3 {
+    color: #00d4ff;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.type-info {
+    margin-bottom: 1rem;
+}
+
+.near-earth-asteroids {
+    margin: 3rem 0;
+}
+
+.near-earth-asteroids h2 {
+    color: #00d4ff;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.nea-info {
+    margin-bottom: 2rem;
+}
+
+.nea-info p {
+    color: #e0e0e0;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+/* responzivnost za asteroidi */
+@media (max-width: 900px) {
+    .belt-info {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .asteroids-grid,
+    .types-grid,
+    .nea-categories {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* misije */
+.missions-page main {
+    padding-top: 40px;
+}
+
+.missions-page .page-hero {
+    margin-bottom: 2.5rem;
+    text-align: center;
+    padding: 2rem 0 1.5rem 0;
+}
+
+.missions-page .page-hero h1 {
+    color: #00d4ff;
+    margin-bottom: 1rem;
+    font-size: 2.2rem;
+    font-family: "Orbitron", Arial, sans-serif;
+}
+
+.missions-page .page-hero p {
+    color: #cccccc;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    font-family: "Montserrat", Arial, sans-serif;
+}
+
+/* misije */
+.missions-page {
+    padding-top: 90px;
+}
+
+/*  Voyager i Cassini  */
+.mission-highlight,
+.cassini-mission,
+.other-missions,
+.future-missions {
+    margin-bottom: 4rem;
+}
+
+.mission-highlight h2,
+.cassini-mission h2,
+.other-missions h2,
+.future-missions h2 {
+    color: #00d4ff;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    font-family: "Orbitron", Arial, sans-serif;
+}
+
+.voyager-section,
+.cassini-section {
+    margin-bottom: 3rem;
+}
+
+.voyager-info,
+.cassini-info,
+.record-info {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 1.5rem;
+}
+
+.voyager-info img,
+.cassini-info img {
+    width: 220px;
+    min-width: 180px;
+    max-width: 300px;
+    border-radius: 15px;
+    box-shadow: 0 4px 16px rgba(0, 212, 255, 0.1);
+    object-fit: cover;
+    background: #111;
+}
+
+.voyager-details,
+.cassini-details {
+    flex: 1 1 0;
+    min-width: 220px;
+}
+
+.voyager-details h3,
+.cassini-details h3 {
+    color: #00d4ff;
+    font-size: 1.3rem;
+    margin-bottom: 0.7rem;
+    font-family: "Orbitron", Arial, sans-serif;
+}
+
+.mission-stats {
+    margin-bottom: 1rem;
+}
+
+.mission-stats .stat {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.3rem;
+    color: #cccccc;
+    font-size: 1rem;
+    font-family: "Montserrat", Arial, sans-serif;
+}
+
+.stat-label {
+    color: #cccccc;
+}
+
+.stat-value {
+    color: #00d4ff;
+    font-weight: 700;
+}
+
+/* Voyager otkrića i Cassini otkrića */
+.voyager-achievements,
+.cassini-discoveries {
+    margin: 2.5rem 0 2rem 0;
+}
+
+.voyager-achievements h3,
+.cassini-discoveries h3 {
+    color: #00d4ff;
+    font-size: 1.2rem;
+    margin-bottom: 1.2rem;
+    font-family: "Orbitron", Arial, sans-serif;
+}
+
+.achievements-grid,
+.discoveries-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 1.5rem;
+}
+
+.achievement,
+.discovery {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 1.2rem 1rem;
+    color: #e0e0e0;
+    text-align: left;
+    min-height: 140px;
+}
+
+.achievement h4,
+.discovery h4 {
+    color: #00d4ff;
+    margin-bottom: 0.3rem;
+    font-size: 1.1rem;
+    font-family: "Orbitron", Arial, sans-serif;
+}
+
+.achievement p,
+.discovery p {
+    font-size: 0.98rem;
+    margin-bottom: 0;
+}
+
+/* zlatna ploča */
+.golden-record {
+    margin: 2.5rem 0;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 15px;
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.golden-record h3 {
+    color: #00d4ff;
+    margin-bottom: 1rem;
+    font-family: "Orbitron", Arial, sans-serif;
+}
+
+.record-info {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+}
+
+.record-info img {
+    width: 130px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 212, 255, 0.08);
+    background: #181c22;
+}
+
+.record-description {
+    flex: 1;
+    min-width: 220px;
+}
+
+.record-description ul {
+    margin: 1rem 0 0 1.2rem;
+    color: #cccccc;
+    font-size: 1rem;
+    font-family: "Montserrat", Arial, sans-serif;
+}
+
+.record-description li {
+    margin-bottom: 0.5rem;
+}
+
+/* Grand Finale (Cassini) */
+.grand-finale {
+    margin-top: 2.5rem;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 15px;
+    padding: 1.5rem 2rem;
+}
+
+.grand-finale h3 {
+    color: #00d4ff;
+    margin-bottom: 1rem;
+    font-family: "Orbitron", Arial, sans-serif;
+}
+
+.grand-finale p {
+    color: #e0e0e0;
+    font-size: 1.05rem;
+}
+
+/* ostale misije i buduće misije */
+.missions-grid,
+.future-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+}
+
+.mission-card,
+.future-mission {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 1.2rem 1rem 1.5rem 1rem;
+    color: #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 220px;
+    box-shadow: 0 2px 8px rgba(0, 212, 255, 0.06);
+}
+
+.mission-card h3,
+.future-mission h3 {
+    color: #00d4ff;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    font-family: "Orbitron", Arial, sans-serif;
+}
+
+.mission-info p,
+.future-mission p {
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+}
+
+/* responzivnost za misije */
+@media (max-width: 1100px) {
+
+    .voyager-info,
+    .cassini-info,
+    .record-info {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .voyager-info img,
+    .cassini-info img,
+    .record-info img {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .record-info {
+        gap: 1.2rem;
+    }
+}
+
+@media (max-width: 700px) {
+
+    .missions-grid,
+    .future-grid,
+    .achievements-grid,
+    .discoveries-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .mission-card,
+    .future-mission {
+        min-height: unset;
+    }
+
+    .golden-record,
+    .grand-finale {
+        padding: 1rem;
+    }
+
+    .voyager-info img,
+    .cassini-info img {
+        width: 100%;
+        max-width: 220px;
+    }
+}
+
+/* multimedija */
+.multimedia-page {
+    margin-top: 80px;
+    padding: 2rem 0;
+}
+
+.multimedia-page h1 {
+    text-align: center;
+    color: #00d4ff;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+}
+
+.video-section,
+.audio-section,
+.gallery-section {
+    margin-bottom: 4rem;
+}
+
+.video-section h2,
+.audio-section h2,
+.gallery-section h2 {
+    color: #00d4ff;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+.video-container {
+    text-align: center;
+}
+
+.video-container video {
+    width: 100%;
+    max-width: 800px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+}
+
+.media-description {
+    margin-top: 1rem;
+    color: #cccccc;
+    font-style: italic;
+}
+
+.audio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+}
+
+.audio-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+}
+
+.audio-item h3 {
+    color: #00d4ff;
+    margin-bottom: 1rem;
+}
+
+.audio-item audio {
+    width: 100%;
+    margin: 1rem 0;
+}
+
+.audio-item p {
+    color: #cccccc;
+    font-size: 0.9rem;
+}
+
+.image-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.gallery-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    color: white;
+    padding: 2rem 1rem 1rem;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+    transform: translateY(0);
+}
+
+.gallery-overlay h3 {
+    color: #00d4ff;
+    margin-bottom: 0.5rem;
+}
+
+/* interaktivni sadržaj */
+.interactive-section {
+    margin: 4rem 0;
+}
+
+.interactive-section h2 {
+    color: #00d4ff;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.interactive-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+}
+
+.interactive-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.interactive-item h3 {
+    color: #00d4ff;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.interactive-placeholder {
+    position: relative;
+    margin: 1rem 0;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.interactive-placeholder:hover {
+    transform: scale(1.02);
+}
+
+.interactive-placeholder img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 212, 255, 0.8);
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    transition: background 0.3s ease;
+}
+
+.play-button:hover {
+    background: rgba(0, 212, 255, 1);
+}
+
+.interactive-item p {
+    color: #cccccc;
+    text-align: center;
+    line-height: 1.6;
+}
+
+/* media credits */
+.media-credits {
+    margin: 4rem 0;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 3rem;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.media-credits h2 {
+    color: #00d4ff;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.credits-content ul {
+    margin: 1.5rem 0;
+    padding-left: 2rem;
+}
+
+.credits-content li {
+    margin-bottom: 0.8rem;
+    color: #cccccc;
+}
+
+.disclaimer {
+    margin-top: 2rem;
+    padding: 1rem;
+    background: rgba(0, 212, 255, 0.1);
+    border-radius: 8px;
+    color: #00d4ff;
+    font-style: italic;
+    text-align: center;
+}
+
+/* kontakt */
+.contact-form {
+    margin-top: 80px;
+    padding: 2rem 0;
+}
+
+.contact-form h1 {
+    text-align: center;
+    color: #00d4ff;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+}
+
+.form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 3rem;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+}
+
+.form-group {
+    margin-bottom: 2rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #00d4ff;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: 2px solid #00d4ff;
+}
+
+.btn {
+    background: linear-gradient(45deg, #00d4ff, #0099cc);
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: transform 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.contact-info {
+    margin-top: 4rem;
+}
+
+.contact-info h2 {
+    color: #00d4ff;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.authors-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.authors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.author-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.author-card h3 {
+    color: #00d4ff;
+    margin-bottom: 1rem;
+}
+
+.author-card p {
+    color: #cccccc;
+    margin-bottom: 0.5rem;
+}
+
+/* politika privatnosti */
+.privacy-page {
+    margin-top: 80px;
+    padding: 2rem 0;
+}
+
+.privacy-page h1 {
+    color: #00d4ff;
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+}
+
+.last-updated {
+    color: #cccccc;
+    font-style: italic;
+    margin-bottom: 3rem;
+}
+
+.privacy-section {
+    margin-bottom: 3rem;
+}
+
+.privacy-section h2 {
+    color: #00d4ff;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+}
+
+.privacy-section h3 {
+    color: #ffffff;
+    margin: 1.5rem 0 1rem;
+    font-size: 1.3rem;
+}
+
+.privacy-section ul {
+    margin: 1rem 0;
+    padding-left: 2rem;
+}
+
+.privacy-section li {
+    margin-bottom: 0.5rem;
+    color: #cccccc;
+}
+
+.privacy-footer {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.privacy-footer p {
+    color: #00d4ff;
+    margin: 0.5rem 0;
+}
+
+/* footer */
+footer {
+    background: rgba(0, 0, 0, 0.9);
+    padding: 3rem 0 1rem;
+    margin-top: 4rem;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 0 20px;
+}
+
+.footer-section h3 {
+    color: #00d4ff;
+    margin-bottom: 1rem;
+}
+
+.footer-nav {
+    list-style: none;
+}
+
+.footer-nav a {
+    color: #cccccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
+    color: #00d4ff;
+}
+
+.foi-logo {
+    width: 100px;
+    margin-top: 1rem;
+}
+
+/* responzivnost */
+@media (max-width: 768px) {
+    .nav-menu {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .planet-info,
+    .intro-content {
+        grid-template-columns: 1fr;
+    }
+
+    .stats-grid,
+    .audio-grid,
+    .image-gallery,
+    .authors-grid,
+    .categories-grid,
+    .facts-container,
+    .interactive-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .video-container video {
+        width: 100%;
+    }
+
+    .gallery-overlay {
+        transform: translateY(0);
+        position: relative;
+        background: rgba(0, 0, 0, 0.8);
+    }
+
+    .planets-nav-grid,
+    .moons-nav-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+
+    .planets-nav-grid,
+    .moons-nav-grid {
+        grid-template-columns: 1fr;
+    }
+}

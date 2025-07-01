@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Istraživanje Sunčevog sustava - planeti, mjeseci, asteroidi, kometi i svemirske misije">
+    <meta name="keywords" content="Sunčev sustav, planeti, mjeseci, svemir, astronomija">
+    <title>Kontakt - Solar</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+       <nav class="navbar" aria-label="Glavna navigacija">
+            <div class="nav-container">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="../images/logo.png" alt="Sunčev sustav logo">
+                        <span>Solar</span>
+                    </a>
+                </div>
+                <ul class="nav-menu">
+                    <li class="dropdown">
+                        <a href="objekti/planeti.html" class="dropbtn">Planeti</a>
+                        <div class="dropdown-content">
+                            <a href="objekti/planeti/jupiter.html">Jupiter</a>
+                            <a href="objekti/planeti/mars.html">Mars</a>
+                            <a href="objekti/planeti/merkur.html">Merkur</a>
+                            <a href="objekti/planeti/neptun.html">Neptun</a>
+                            <a href="objekti/planeti/saturn.html">Saturn</a>
+                            <a href="objekti/planeti/uran.html">Uran</a>
+                            <a href="objekti/planeti/venera.html">Venera</a>
+                            <a href="objekti/planeti/zemlja.html">Zemlja</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="objekti/mjeseci.html" class="dropbtn">Mjeseci</a>
+                        <div class="dropdown-content">
+                            <a href="objekti/mjeseci/enceladus.html">Enceladus</a>
+                            <a href="objekti/mjeseci/europa.html">Europa</a>
+                            <a href="objekti/mjeseci/mjesec.html">Mjesec</a>
+                            <a href="objekti/mjeseci/titan.html">Titan</a>
+                        </div>
+                    </li>
+                    <li><a href="objekti/kometi.html">Kometi</a></li>
+                    <li><a href="objekti/asteroidi.html">Asteroidi</a></li>
+                    <li><a href="ostalo/misije.html">Svemirske misije</a></li>
+                    <li><a href="kontakt.html">Kontakt</a></li>
+                    <li><a href="multimedija.html">Multimedija</a></li>
+                </ul>
+                <button class="mobile-menu-btn" aria-label="Otvori mobilni meni" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="contact-form">
+        <div class="container">
+            <h1>Kontaktirajte nas</h1>
+            <div class="form-container">
+                <form id="contact-form">
+                    <div class="form-group">
+                        <label for="name">Ime i prezime:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email adresa:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Predmet:</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Poruka:</label>
+                        <textarea id="message" name="message" rows="6" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Pošaljite poruku</button>
+                </form>
+            </div>
+            
+            <div class="contact-info">
+                <h2>Informacije o autoru</h2>
+                <div class="authors-container">
+                <div class="authors-grid">
+                    <div class="author-card">
+                        <h3>Julianne Lazar</h3>
+                        <p>studentica FOI-ja</p>
+                        <p>e-mail: jlazar22@foi.hr</p>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Autorica</h3>
+                <p>Julianne Lazar</p>
+                <p><br>Datum predaje: lipanj 2025.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Kolegij</h3>
+                <p>Napredna web korisnika sučelja</p>
+                <img src="../images/foi-logo.png" alt="FOI logo" class="foi-logo">
+            </div>
+            <div class="footer-section">
+                <h3>Navigacija</h3>
+                <ul class="footer-nav">
+                    <li><a href="index.html">Početna</a></li>
+                    <li><a href="objekti/planeti.html">Planeti</a></li>
+                    <li><a href="objekti/mjeseci.html">Mjeseci</a></li>
+                    <li><a href="objekti/kometi.html">Kometi</a></li>
+                    <li><a href="objekti/asteroidi.html">Asteroidi</a></li>
+                    <li><a href="ostalo/misije.html">Svemirske misije</a></li>
+                    <li><a href="kontakt.html">Kontakt</a></li>
+                    <li><a href="multimedija.html">Multimedija</a></li>
+                    <li><a href="privatnost.html">Politika privatnosti</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>
